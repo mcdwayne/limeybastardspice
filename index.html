@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Limey Bastard Spice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Limey Bastard — lime-forward hot spice that unleashes the full power of flavor. Use it like you would Tajin." />
+  <link rel="canonical" href="https://limeybastardspice.com/" />
+  <link rel="icon" type="image/png" href="./img/LimeyBastardLabel.png" />
+  <link rel="apple-touch-icon" href="./img/LimeyBastardLabel.png" />
+  <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000000;
+  --accent: #4ade80;
+  --accent-bright: #86efac;
+  --accent-dark: #16a34a;
+  --text-main: #e5e7eb;
+  --text-muted: #a3b5a8;
+  --text-soft: #cbd5e1;
+  --border-subtle: #14532d;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+  --radius-xl: 1.75rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #000000 0%, #052e16 45%, #166534 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.5;
+}
+
+.nav {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(5, 46, 22, 0.92));
+  border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.6rem, 2vw, 0.85rem);
+}
+
+.nav__brand {
+  display: block;
+  line-height: 0;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-logo--nav {
+  max-width: min(220px, 70vw);
+  max-height: 72px;
+}
+
+.brand-logo--hero {
+  max-width: min(340px, 92vw);
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+}
+
+.nav__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.6rem, 3vw, 1.2rem);
+}
+
+.nav__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #021a0a;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.nav__link:hover,
+.nav__link:focus,
+.nav__link:focus-visible {
+  color: #021a0a;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  border-color: rgba(134, 239, 172, 0.5);
+  font-weight: 700;
+  transform: translateY(-1px);
+}
+
+.page {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+  padding-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.profile {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.92),
+    rgba(5, 46, 22, 0.88)
+  );
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 3vw, 2.5rem);
+  text-align: center;
+  width: 100%;
+}
+
+.profile__tagline {
+  font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: var(--accent-bright);
+  margin: 0 0 1.25rem 0;
+  letter-spacing: 0.02em;
+}
+
+.profile__intro {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin: 0 0 1.5rem 0;
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile__intro a {
+  color: var(--accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.profile__intro a:hover,
+.profile__intro a:focus {
+  color: var(--accent);
+}
+
+.availability {
+  margin: 0 auto 1.75rem;
+  padding: 1rem 1.15rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(20, 83, 45, 0.35));
+  text-align: left;
+  max-width: 44ch;
+}
+
+.availability__title {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: var(--accent-bright);
+  font-weight: 700;
+}
+
+.availability p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: clamp(0.9rem, 2.5vw, 0.98rem);
+  line-height: 1.65;
+}
+
+.availability strong {
+  color: var(--text-main);
+}
+
+.profile__site {
+  margin: 0 0 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.profile__site a {
+  color: var(--accent-bright);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile__site a:hover,
+.profile__site a:focus {
+  text-decoration: underline;
+}
+
+.profile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  margin-bottom: 1.5rem;
+}
+
+.profile__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(0.5rem, 1vw, 0.65rem) clamp(1rem, 2vw, 1.25rem);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: #021a0a;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(74, 222, 128, 0.2);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.profile__cta:hover,
+.profile__cta:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(74, 222, 128, 0.3);
+  outline: none;
+}
+
+.profile__cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.4),
+    0 14px 30px rgba(74, 222, 128, 0.3);
+  border-radius: 999px;
+}
+
+.profile__footer {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  margin-top: 0.5rem;
+}
+
+.profile__footer a {
+  color: var(--accent-bright);
+  text-decoration: none;
+}
+
+.profile__footer a:hover,
+.profile__footer a:focus {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.35);
+  border-radius: 0.25rem;
+}
+
+.nav__link:focus-visible,
+.nav__brand:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.45),
+    0 0 0 9px rgba(0, 0, 0, 0.85);
+  border-radius: 0.5rem;
+  transform: translateZ(0);
+}
+
+@media (max-width: 480px) {
+  .profile__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profile__cta {
+    justify-content: center;
+  }
+}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a class="nav__brand" href="https://limeybastardspice.com/">
+        <img
+          src="./img/LimeyBastardLabel.png"
+          alt="Limey Bastard Spice"
+          class="brand-logo brand-logo--nav"
+          width="220"
+          height="72"
+        />
+      </a>
+      <ul class="nav__menu">
+        <li><a class="nav__link" href="./index.html" aria-current="page">Home</a></li>
+        <li><a class="nav__link" href="./about.html">About</a></li>
+        <li><a class="nav__link" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="profile" aria-label="Limey Bastard Spice">
+      <img
+        src="./img/LimeyBastardLabel.png"
+        alt="Limey Bastard Spice label"
+        class="brand-logo brand-logo--hero"
+        width="340"
+        height="340"
+      />
+
+      <p class="profile__tagline">Unleash the full power of flavor.</p>
+
+      <p class="profile__intro">
+        A lime-forward chili blend that brings sharp sour, deep umami, and serious
+        heat together — not to punish your palate, but to unleash the full power
+        of flavor in every bite.
+      </p>
+
+      <p class="profile__intro">
+        <strong>Use it like you would <a href="https://www.allrecipes.com/gallery/tajin-seasoning-uses/" target="_blank" rel="noopener noreferrer">Tajin</a>:</strong> sprinkle on fruit, rim a glass,
+        dust over tacos and elote, or anywhere you want that lime-chili magic —
+        just expect Limey Bastard to hit harder.
+      </p>
+
+      <aside class="availability" aria-label="How to buy">
+        <p class="availability__title">No online shop — find us in person</p>
+        <p>
+          We do <strong>not</strong> offer online shopping at this time.
+          Limey Bastard is locally and artisanally made, and only available
+          in person at select Chicago events.
+          <strong>Look for the label.</strong>
+        </p>
+      </aside>
+
+      <p class="profile__site">
+        <a href="https://limeybastardspice.com/">limeybastardspice.com</a>
+      </p>
+
+      <div class="profile__actions">
+        <a class="profile__cta" href="./about.html">See the Ingredients</a>
+        <a class="profile__cta" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a>
+      </div>
+
+      <footer class="profile__footer">
+        &copy; 2026 <a href="https://limeybastardspice.com/">limeybastardspice.com</a>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

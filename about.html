@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <title>About — Limey Bastard Spice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="What's inside Limey Bastard — a brutally hot lime-forward spice blend." />
+  <link rel="canonical" href="https://limeybastardspice.com/about.html" />
+  <link rel="icon" type="image/png" href="./img/LimeyBastardLabel.png" />
+  <link rel="apple-touch-icon" href="./img/LimeyBastardLabel.png" />
+  <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000000;
+  --accent: #4ade80;
+  --accent-bright: #86efac;
+  --accent-dark: #16a34a;
+  --text-main: #e5e7eb;
+  --text-muted: #a3b5a8;
+  --text-soft: #cbd5e1;
+  --border-subtle: #14532d;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
+  --radius-xl: 1.75rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #000000 0%, #052e16 45%, #166534 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.5;
+}
+
+.nav {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(5, 46, 22, 0.92));
+  border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.6rem, 2vw, 0.85rem);
+}
+
+.nav__brand {
+  display: block;
+  line-height: 0;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.nav__brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-logo--nav {
+  max-width: min(220px, 70vw);
+  max-height: 72px;
+}
+
+.product-group {
+  margin: 0 0 1.25rem 0;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+  background: #000;
+  line-height: 0;
+}
+
+.product-group__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(420px, 55vh);
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.product-group__caption {
+  display: block;
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  font-size: clamp(0.82rem, 2vw, 0.92rem);
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(5, 46, 22, 0.5));
+}
+
+.nav__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.6rem, 3vw, 1.2rem);
+}
+
+.nav__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #021a0a;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.nav__link:hover,
+.nav__link:focus,
+.nav__link:focus-visible {
+  color: #021a0a;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  border-color: rgba(134, 239, 172, 0.5);
+  font-weight: 700;
+  transform: translateY(-1px);
+}
+
+.nav__link[aria-current="page"] {
+  color: #021a0a;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.25);
+}
+
+.page {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.profile {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.92),
+    rgba(5, 46, 22, 0.88)
+  );
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2.25rem);
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 1.25em;
+}
+
+.profile__name {
+  font-size: clamp(1.875rem, 4vw, 2.875rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #ffffff, var(--accent-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profile__lead {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: var(--text-muted);
+  margin: 0 0 1.25rem 0;
+  line-height: 1.7;
+}
+
+.availability {
+  margin: 0 0 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(20, 83, 45, 0.35));
+  text-align: left;
+}
+
+.availability__title {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: var(--accent-bright);
+  font-weight: 700;
+}
+
+.availability p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: clamp(0.88rem, 2.5vw, 0.96rem);
+  line-height: 1.65;
+}
+
+.availability strong {
+  color: var(--text-main);
+}
+
+.profile__footer a {
+  color: var(--accent-bright);
+  text-decoration: none;
+}
+
+.profile__footer a:hover,
+.profile__footer a:focus {
+  text-decoration: underline;
+}
+
+.profile__footer {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+}
+
+.profile__about {
+  text-align: left;
+  font-size: clamp(0.9rem, 2.5vw, 0.98rem);
+  line-height: 1.8;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.ingredients__heading {
+  margin: 0 0 1rem 0;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--accent-bright);
+  text-align: left;
+}
+
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ingredients__item {
+  padding: 1rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(20, 83, 45, 0.25));
+}
+
+.ingredients__item h2 {
+  margin: 0 0 0.35rem 0;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--accent-bright);
+  font-weight: 700;
+}
+
+.ingredients__item p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: #021a0a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(74, 222, 128, 0.25);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(74, 222, 128, 0.35);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.35);
+  border-radius: 0.25rem;
+}
+
+.nav__link:focus-visible,
+.nav__brand:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.45),
+    0 0 0 9px rgba(0, 0, 0, 0.85);
+  border-radius: 0.5rem;
+  transform: translateZ(0);
+}
+
+.scroll-to-top:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.4),
+    0 12px 28px rgba(74, 222, 128, 0.35);
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .profile {
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a class="nav__brand" href="https://limeybastardspice.com/">
+        <img
+          src="./img/LimeyBastardLabel.png"
+          alt="Limey Bastard Spice"
+          class="brand-logo brand-logo--nav"
+          width="220"
+          height="72"
+        />
+      </a>
+      <ul class="nav__menu">
+        <li><a class="nav__link" href="./index.html">Home</a></li>
+        <li><a class="nav__link" href="./about.html" aria-current="page">About</a></li>
+        <li><a class="nav__link" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="profile" aria-label="Limey Bastard ingredients">
+      <h1 class="profile__name">What's Inside</h1>
+      <p class="profile__lead">
+        Limey Bastard is a lime-forward blend built to unleash the full power of flavor.
+        Every ingredient is there for a reason.
+      </p>
+
+      <figure class="product-group">
+        <img
+          src="./img/limeybastard-group.png"
+          alt="Limey Bastard spice jars with green labels, filled with reddish-orange blend"
+          class="product-group__image"
+          width="640"
+          height="427"
+          loading="lazy"
+        />
+        <figcaption class="product-group__caption">
+          Locally and artisanally bottled — look for the green <strong>Limey Bastard</strong> label.
+        </figcaption>
+      </figure>
+
+      <aside class="availability" aria-label="How to buy">
+        <p class="availability__title">No online shop — find us in person</p>
+        <p>
+          We do <strong>not</strong> offer online shopping at this time.
+          This blend is locally and artisanally made, and only available
+          in person at select Chicago events.
+          <strong>Look for the jar and label shown above.</strong>
+        </p>
+      </aside>
+
+      <div class="profile__about">
+        <h2 class="ingredients__heading">Ingredients</h2>
+        <ul class="ingredients">
+            <li class="ingredients__item">
+              <h2>Salt</h2>
+              <p>The foundation. Balances the acids and heat so the burn hits clean instead of muddy.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Citric Acid</h2>
+              <p>Pure sour punch — brightens the lime profile and makes the heat feel sharper on the tongue.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Powdered Lime</h2>
+              <p>Real lime character in dry form. Zesty, tart, and unmistakably limey — it's in the name for a reason.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Malic Acid</h2>
+              <p>Green-apple tang that layers under the citric bite for a longer, more complex sour finish.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Lactic Acid</h2>
+              <p>A subtle fermented roundness that smooths the edge between sour and spice without dulling either.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>MSG</h2>
+              <p>Amplifies every flavor in the blend — makes the lime pop and the chilies taste deeper and richer.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Korean Chili Powder</h2>
+              <p>Gochugaru-style heat with a smoky, slightly sweet backbone — the everyday fire in the mix.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Thai Bird's Eye Chili</h2>
+              <p>Fast, fierce heat that lights up fast and fades just enough to let the next bite hurt again.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Ghost Pepper</h2>
+              <p>Bhut jolokia territory — slow-building, face-melting heat for those who asked for more.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Scorpion Pepper</h2>
+              <p>Sting-forward and floral on the nose, vicious on the palate. Not here to be subtle.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Carolina Reaper</h2>
+              <p>Currently the world's hottest pepper. A small amount goes a very, very long way.</p>
+            </li>
+            <li class="ingredients__item">
+              <h2>Cellulose Powder</h2>
+              <p>Anti-caking agent that keeps the blend free-flowing so every shake delivers the same punishment.</p>
+            </li>
+        </ul>
+      </div>
+
+      <a href="#top" class="scroll-to-top" aria-label="Scroll to top of page">&uarr;</a>
+      <footer class="profile__footer">
+        &copy; 2026 <a href="https://limeybastardspice.com/">limeybastardspice.com</a>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const scrollButton = document.querySelector('.scroll-to-top');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        scrollButton.classList.add('visible');
+      } else {
+        scrollButton.classList.remove('visible');
+      }
+    });
+
+    scrollButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
