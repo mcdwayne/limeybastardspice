@@ -128,8 +128,10 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: clamp(0.6rem, 3vw, 1.2rem);
+  width: 100%;
 }
 
 .nav__link {
@@ -160,6 +162,18 @@ body {
   background: linear-gradient(135deg, var(--accent), var(--accent-bright));
   font-weight: 800;
   box-shadow: 0 10px 30px rgba(74, 222, 128, 0.25);
+}
+
+.nav__link--instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav__link--instagram .nav__link__icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .page {
@@ -232,6 +246,70 @@ body {
 
 .availability strong {
   color: var(--text-main);
+}
+
+.instagram-promo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 0 1.5rem 0;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-main);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(20, 83, 45, 0.45));
+  border: 2px solid rgba(74, 222, 128, 0.45);
+  box-shadow: 0 12px 32px rgba(74, 222, 128, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.instagram-promo:hover,
+.instagram-promo:focus {
+  transform: translateY(-2px);
+  border-color: var(--accent-bright);
+  box-shadow: 0 16px 40px rgba(74, 222, 128, 0.22);
+  outline: none;
+}
+
+.instagram-promo:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.35),
+    0 16px 40px rgba(74, 222, 128, 0.22);
+}
+
+.instagram-promo__icon {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.instagram-promo__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.instagram-promo__title {
+  font-size: clamp(1.05rem, 2.8vw, 1.2rem);
+  font-weight: 800;
+  color: var(--accent-bright);
+  letter-spacing: 0.01em;
+}
+
+.instagram-promo__handle {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.instagram-promo__cta {
+  font-size: clamp(0.82rem, 2vw, 0.9rem);
+  color: var(--text-main);
+  margin-top: 0.1rem;
 }
 
 .profile__footer a {
@@ -394,6 +472,18 @@ html {
         <li><a class="nav__link" href="./index.html">Home</a></li>
         <li><a class="nav__link" href="./about.html" aria-current="page">About</a></li>
         <li><a class="nav__link" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a></li>
+        <li>
+          <a
+            class="nav__link nav__link--instagram"
+            href="https://www.instagram.com/limeybastardspice/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow @limeybastardspice on Instagram"
+          >
+            <img src="./img/Instagram.svg" alt="" class="nav__link__icon" width="16" height="16" />
+            Instagram
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -428,6 +518,27 @@ html {
           <strong>Look for the jar and label shown above.</strong>
         </p>
       </aside>
+
+      <a
+        class="instagram-promo"
+        href="https://www.instagram.com/limeybastardspice/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Limey Bastard Spice on Instagram @limeybastardspice"
+      >
+        <img
+          src="./img/Instagram.svg"
+          alt=""
+          class="instagram-promo__icon"
+          width="44"
+          height="44"
+        />
+        <span class="instagram-promo__text">
+          <span class="instagram-promo__title">Follow us on Instagram</span>
+          <span class="instagram-promo__handle">@limeybastardspice</span>
+          <span class="instagram-promo__cta">Stay in the loop on Chicago events and new batches</span>
+        </span>
+      </a>
 
       <div class="profile__about">
         <h2 class="ingredients__heading">Ingredients</h2>

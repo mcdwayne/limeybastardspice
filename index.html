@@ -104,8 +104,10 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: clamp(0.6rem, 3vw, 1.2rem);
+  width: 100%;
 }
 
 .nav__link {
@@ -129,6 +131,18 @@ body {
   border-color: rgba(134, 239, 172, 0.5);
   font-weight: 700;
   transform: translateY(-1px);
+}
+
+.nav__link--instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav__link--instagram .nav__link__icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .page {
@@ -215,6 +229,71 @@ body {
   color: var(--text-main);
 }
 
+.instagram-promo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto 1.75rem;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-main);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(20, 83, 45, 0.45));
+  border: 2px solid rgba(74, 222, 128, 0.45);
+  box-shadow: 0 12px 32px rgba(74, 222, 128, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.instagram-promo:hover,
+.instagram-promo:focus {
+  transform: translateY(-2px);
+  border-color: var(--accent-bright);
+  box-shadow: 0 16px 40px rgba(74, 222, 128, 0.22);
+  outline: none;
+}
+
+.instagram-promo:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--accent-bright),
+    0 0 0 6px rgba(74, 222, 128, 0.35),
+    0 16px 40px rgba(74, 222, 128, 0.22);
+}
+
+.instagram-promo__icon {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.instagram-promo__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.instagram-promo__title {
+  font-size: clamp(1.05rem, 2.8vw, 1.2rem);
+  font-weight: 800;
+  color: var(--accent-bright);
+  letter-spacing: 0.01em;
+}
+
+.instagram-promo__handle {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.instagram-promo__cta {
+  font-size: clamp(0.82rem, 2vw, 0.9rem);
+  color: var(--text-main);
+  margin-top: 0.1rem;
+}
+
 .profile__site {
   margin: 0 0 1.25rem 0;
   font-size: 0.95rem;
@@ -269,6 +348,24 @@ body {
     0 0 0 6px rgba(74, 222, 128, 0.4),
     0 14px 30px rgba(74, 222, 128, 0.3);
   border-radius: 999px;
+}
+
+.profile__photo {
+  margin: 1.5rem 0 1.25rem 0;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+  line-height: 0;
+}
+
+.profile__photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(380px, 50vh);
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .profile__footer {
@@ -338,6 +435,18 @@ html {
         <li><a class="nav__link" href="./index.html" aria-current="page">Home</a></li>
         <li><a class="nav__link" href="./about.html">About</a></li>
         <li><a class="nav__link" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a></li>
+        <li>
+          <a
+            class="nav__link nav__link--instagram"
+            href="https://www.instagram.com/limeybastardspice/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow @limeybastardspice on Instagram"
+          >
+            <img src="./img/Instagram.svg" alt="" class="nav__link__icon" width="16" height="16" />
+            Instagram
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -365,6 +474,27 @@ html {
         just expect Limey Bastard to hit harder.
       </p>
 
+      <a
+        class="instagram-promo"
+        href="https://www.instagram.com/limeybastardspice/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Limey Bastard Spice on Instagram @limeybastardspice"
+      >
+        <img
+          src="./img/Instagram.svg"
+          alt=""
+          class="instagram-promo__icon"
+          width="44"
+          height="44"
+        />
+        <span class="instagram-promo__text">
+          <span class="instagram-promo__title">Follow us on Instagram</span>
+          <span class="instagram-promo__handle">@limeybastardspice</span>
+          <span class="instagram-promo__cta">Event drops, behind-the-scenes, and where to find us in Chicago</span>
+        </span>
+      </a>
+
       <aside class="availability" aria-label="How to buy">
         <p class="availability__title">No online shop — find us in person</p>
         <p>
@@ -383,6 +513,17 @@ html {
         <a class="profile__cta" href="./about.html">See the Ingredients</a>
         <a class="profile__cta" href="mailto:limeybastard@limeybastardspice.com">Contact Us</a>
       </div>
+
+      <figure class="profile__photo">
+        <img
+          src="./img/lb-beach.jpg"
+          alt="Hand holding a Limey Bastard spice jar by the water on a sunny day"
+          class="profile__photo-image"
+          width="640"
+          height="427"
+          loading="lazy"
+        />
+      </figure>
 
       <footer class="profile__footer">
         &copy; 2026 <a href="https://limeybastardspice.com/">limeybastardspice.com</a>
